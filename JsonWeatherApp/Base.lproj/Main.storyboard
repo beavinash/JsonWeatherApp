@@ -1,21 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="JsonWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-Tf-GMh">
+                                <rect key="frame" x="0.0" y="309" width="375" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6C-mC-K6L">
+                                <rect key="frame" x="140" y="358" width="95" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-L7-FHM">
+                                <rect key="frame" x="0.0" y="464" width="375" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mI5-Xx-ktf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="58"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="x6C-mC-K6L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0md-H8-0bx"/>
+                            <constraint firstItem="x6C-mC-K6L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7ak-QF-ird"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mI5-Xx-ktf" secondAttribute="trailing" id="7ox-oK-WGp"/>
+                            <constraint firstItem="J24-L7-FHM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lnx-v5-yvD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RLw-Tf-GMh" secondAttribute="trailing" id="Non-Or-OCm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J24-L7-FHM" secondAttribute="trailing" id="UF2-02-ltt"/>
+                            <constraint firstItem="RLw-Tf-GMh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XZu-Ok-bRh"/>
+                            <constraint firstItem="x6C-mC-K6L" firstAttribute="top" secondItem="RLw-Tf-GMh" secondAttribute="bottom" constant="10" id="ej2-jX-quS"/>
+                            <constraint firstItem="mI5-Xx-ktf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="r2N-T2-Q9z"/>
+                            <constraint firstItem="mI5-Xx-ktf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wOy-h8-r8e"/>
+                            <constraint firstItem="J24-L7-FHM" firstAttribute="top" secondItem="x6C-mC-K6L" secondAttribute="bottom" constant="10" id="yd9-k9-5ev"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="RLw-Tf-GMh" id="ZYP-ie-e2I"/>
+                        <outlet property="temperatureLabel" destination="x6C-mC-K6L" id="mKj-oM-enP"/>
+                        <outlet property="temperatureScaleLabel" destination="J24-L7-FHM" id="lfY-Hx-Izg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
